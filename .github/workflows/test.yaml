@@ -5,9 +5,9 @@ name: Test grammar
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -24,7 +24,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      run: npm install tree-sitter-cli -g
+
     - name: Generate tree-sitter parser
       run: tree-sitter generate
-    - run: test
-    - run: tree-sitter test
+
+    - name: Running tests
+      run: tree-sitter test
