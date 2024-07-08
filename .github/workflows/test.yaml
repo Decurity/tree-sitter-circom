@@ -24,16 +24,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: |
-        npm install yarn -g
-        npm install tree-sitter-cli -g
-
     - name: Generate tree-sitter parser
       run: tree-sitter generate
-
-    # - name: Generated files are up to date
-    #   run: git diff --quiet && git diff --cached --quiet
-
-    - run: yarn
-    - run: yarn test
+    - run: test
+    - run: tree-sitter test
