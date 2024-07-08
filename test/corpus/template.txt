@@ -1,0 +1,47 @@
+=====================================
+Empty Template Definition
+=====================================
+template A(){
+}
+---
+ (source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body)))
+=====================================
+Empty Template with arguments
+=====================================
+template wrong (N, M) {
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list
+          (identifier)
+          (identifier))
+        (template_body)))
+=====================================
+Simple Template with arguments
+=====================================
+template wrong (N, M) {
+    signal input a;
+    signal output out;
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list
+          (identifier)
+          (identifier))
+        (template_body
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)))))

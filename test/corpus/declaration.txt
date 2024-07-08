@@ -1,0 +1,170 @@
+=====================================
+Simple Signals  Declaration
+=====================================
+template test(){
+  signal inter;
+  signal input in1;
+  signal output out;
+}
+---
+ (source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (signal)
+            (identifier))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)))))
+=====================================
+Variable Declaration
+=====================================
+template qwe(){
+  var tmp;
+}
+---
+ (source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (var)
+            (identifier)))))
+=====================================
+Component Declaration
+=====================================
+template qwe(){
+  component tmp;
+}
+---
+ (source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (component)
+            (identifier)))))
+=====================================
+Input Signal Array Declaration
+=====================================
+template test(N, M){
+  signal input inArray[1];
+  signal input inArray[N];
+  signal input inArray[N][N];
+  signal input inArray[1][1];
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list
+          (identifier)
+          (identifier))
+        (template_body
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)
+            (array_definition
+              (int)))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)
+            (array_definition
+              (identifier)))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)
+            (array_definition
+              (identifier)
+              (identifier)))
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)
+            (array_definition
+              (int)
+              (int))))))
+=====================================
+Input Signal with tags Declaration
+=====================================
+template plate(){
+  signal input {tag1, tag2} in1;
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (signal
+              (signal_visability)
+              (signal_tags
+                (identifier)
+                (identifier)))
+            (identifier)))))
+=====================================
+Output Signal Declaration with initialization
+=====================================
+template plate(){
+  signal output out <== in1 * in2;
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (signal
+              (signal_visability))
+            (identifier)
+            (binary_expression
+              (identifier)
+              (identifier))))))
+=====================================
+Double initialization
+=====================================
+template test(){
+  var tmp = 1, ans = 1;
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (var)
+            (identifier)
+            (int)
+            (identifier)
+            (int)))))
+=====================================
+Multiple components declaration
+=====================================
+template test(){
+  component f1, f2;
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list)
+        (template_body
+          (variable_declaration_statement
+            (component)
+            (identifier)
+            (identifier)))))

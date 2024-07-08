@@ -1,0 +1,32 @@
+=====================================
+Simple Function Definition
+=====================================
+function simple () {
+    return 1;
+}
+---
+ (source_file
+      (function_definition
+        (identifier)
+        (parameter_list)
+        (function_body
+          (return_statement
+            (int)))))
+=====================================
+Simple Function with Arguments
+=====================================
+function add (a, b) {
+    return a + b;
+}
+---
+(source_file
+      (function_definition
+        (identifier)
+        (parameter_list
+          (identifier)
+          (identifier))
+        (function_body
+          (return_statement
+            (binary_expression
+              (identifier)
+              (identifier))))))
