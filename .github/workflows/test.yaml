@@ -5,9 +5,9 @@ name: Test grammar
 
 on:
   push:
-    branches: [ main, workflow-test ]
+    branches: [main]
   pull_request:
-    branches: [ main, workflow-test ]
+    branches: [main]
 
 jobs:
   build:
