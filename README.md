@@ -1,5 +1,5 @@
 ## 🌴 tree-sitter-circom
-
+[![Test grammar](https://github.com/Decurity/tree-sitter-circom/actions/workflows/test.yaml/badge.svg)](https://github.com/Decurity/tree-sitter-circom/actions/workflows/test.yaml)
 > 💡 this grammar is still in development, the structure of the generated AST is not stable
 
 This repository contains a grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
