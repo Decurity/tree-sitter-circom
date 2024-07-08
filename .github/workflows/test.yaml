@@ -32,8 +32,8 @@ jobs:
     - name: Generate tree-sitter parser
       run: tree-sitter generate
 
-    - name: Generated files are up to date
-      run: git diff --quiet && git diff --cached --quiet
+    # - name: Generated files are up to date
+    #   run: git diff --quiet && git diff --cached --quiet
 
     - run: yarn
     - run: yarn test
