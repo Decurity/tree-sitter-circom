@@ -16,7 +16,7 @@ template Multiplier2(){
 
 component main {public [in1,in2]} = Multiplier2();
 ---
- (source_file
+(source_file
       (pragma_directive
         (circom_pragma_token
           (circom_version)))
@@ -47,7 +47,9 @@ component main {public [in1,in2]} = Multiplier2();
                 (identifier))))))
       (main_component_definition
         (main_component_public_signals
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (call_expression
           (identifier))))

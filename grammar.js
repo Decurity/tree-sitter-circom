@@ -136,7 +136,7 @@ module.exports = grammar({
       "{",
       "public",
       "[",
-      commaSep1($.identifier),
+      commaSep1($.parameter),
       "]",
       "}"
     ),
@@ -397,7 +397,11 @@ module.exports = grammar({
     ),
 
     parameter_list: $ => seq(
-      '(', commaSep($.identifier), ')'
+      '(', commaSep($.parameter), ')'
+    ),
+
+    parameter: $ => seq(
+      $.identifier
     ),
 
     _escape_sequence: $ => token.immediate(seq(

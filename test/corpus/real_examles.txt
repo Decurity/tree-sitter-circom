@@ -27,7 +27,8 @@ template Fibonacci(n) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -252,7 +253,8 @@ template Sudoku(n_sqrt) {
       (function_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (function_body
           (variable_declaration_statement
             (var)
@@ -320,7 +322,8 @@ template Sudoku(n_sqrt) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -399,8 +402,10 @@ template Sudoku(n_sqrt) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -466,7 +471,8 @@ template Sudoku(n_sqrt) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -533,7 +539,8 @@ template Sudoku(n_sqrt) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (var)
@@ -1323,7 +1330,8 @@ template FloatAdd(k, p) {
       (function_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (function_body
           (variable_declaration_statement
             (var)
@@ -1384,7 +1392,8 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -1490,8 +1499,10 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -1607,8 +1618,10 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -1699,9 +1712,12 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -1918,7 +1934,8 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -2013,7 +2030,8 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (expression_statement
             (call_expression
@@ -2082,7 +2100,8 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -2290,7 +2309,8 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -2534,9 +2554,12 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -2651,8 +2674,10 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
@@ -3221,7 +3246,8 @@ template Sha256Bytes(N) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal

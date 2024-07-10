@@ -19,8 +19,10 @@ template wrong (N, M) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body)))
 =====================================
 Simple Template with arguments
@@ -34,8 +36,10 @@ template wrong (N, M) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (signal
