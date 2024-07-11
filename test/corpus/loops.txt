@@ -8,11 +8,12 @@ function f1 (n) {
     return n;
 }
 ---
-(source_file
+ (source_file
       (function_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (function_body
           (for_statement
             (variable_declaration_statement
@@ -45,7 +46,8 @@ function f2 (n) {
       (function_definition
         (identifier)
         (parameter_list
-          (identifier))
+          (parameter
+            (identifier)))
         (function_body
           (while_statement
             (binary_expression

@@ -512,8 +512,10 @@ template FloatAdd(k, p) {
       (template_definition
         (identifier)
         (parameter_list
-          (identifier)
-          (identifier))
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
         (template_body
           (variable_declaration_statement
             (var)
@@ -523,3 +525,71 @@ template FloatAdd(k, p) {
             (array
               (identifier)
               (identifier))))))
+=====================================
+Expression with tuples, circom 2.0.1
+=====================================
+template B(n){
+    var a = 0, b = 0; component c;
+    (a, b, c) = (1,a+1, A(2));
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)))
+        (template_body
+          (variable_declaration_statement
+            (var)
+            (identifier)
+            (int)
+            (identifier)
+            (int))
+          (variable_declaration_statement
+            (component)
+            (identifier))
+          (expression_statement
+            (assignment_expression
+              (tuple
+                (identifier)
+                (identifier)
+                (identifier))
+              (tuple
+                (int)
+                (binary_expression
+                  (identifier)
+                  (int))
+                (call_expression
+                  (identifier)
+                  (argument_list
+                    (int)))))))))
+=====================================
+Expression with anonymous components, circom 2.0.1
+=====================================
+template B(n){
+   signal out <== A(n)(in[0],in[1]);
+}
+---
+(source_file
+      (template_definition
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)))
+        (template_body
+          (variable_declaration_statement
+            (signal)
+            (identifier)
+            (call_expression
+              (identifier)
+              (argument_list
+                (identifier))
+              (anonymous_inputs
+                (argument_list
+                  (array_access_expression
+                    (identifier)
+                    (int))
+                  (array_access_expression
+                    (identifier)
+                    (int)))))))))

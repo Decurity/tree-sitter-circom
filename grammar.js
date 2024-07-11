@@ -99,9 +99,12 @@ module.exports = grammar({
     ),
 
     template_type: $ => choice(
-      "custom",
-      "parallel"
+      $.custom,
+      $.parallel
     ),
+
+    custom: $ => "custom",
+    parallel: $ => "parallel",
 
     template_body: $ => seq(
       "{",
@@ -136,7 +139,7 @@ module.exports = grammar({
       "{",
       "public",
       "[",
-      commaSep1($.identifier),
+      commaSep1($.parameter),
       "]",
       "}"
     ),
@@ -203,6 +206,7 @@ module.exports = grammar({
       $.int,
       $.identifier,
       $.array,
+      $.tuple,
       $.unary_expression,
       $.binary_expression,
       $.ternary_expression,
@@ -260,13 +264,19 @@ module.exports = grammar({
       '--',
     ),
 
-    
-
-    call_expression: $ => seq(
-      $.identifier,
+    anonymous_inputs: $ => seq(
       '(',
       optional($.argument_list),
       ')'
+    ),
+
+    call_expression: $ => seq(
+      optional($.parallel),
+      $.identifier,
+      '(',
+      optional($.argument_list),
+      ')',
+      optional($.anonymous_inputs)
     ),
 
     argument_list: $ => seq(
@@ -355,6 +365,12 @@ module.exports = grammar({
       "]"
     ),
 
+    tuple: $ => seq(
+      '(',
+      commaSep1($._expression),
+      ')'
+    ),
+
     _type: $ => choice(
       $.signal,
       $.var,
@@ -397,7 +413,11 @@ module.exports = grammar({
     ),
 
     parameter_list: $ => seq(
-      '(', commaSep($.identifier), ')'
+      '(', commaSep($.parameter), ')'
+    ),
+
+    parameter: $ => seq(
+      $.identifier
     ),
 
     _escape_sequence: $ => token.immediate(seq(
