@@ -98,3 +98,16 @@ template parallel name(N, M) {
                     (argument_list
                       (identifier)
                       (identifier))))))))))
+=====================================
+Custom Template
+=====================================
+template custom Example() {
+}
+---
+(source_file
+      (template_definition
+        (template_type
+          (custom))
+        (identifier)
+        (parameter_list)
+        (template_body)))
