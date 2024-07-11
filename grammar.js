@@ -206,6 +206,7 @@ module.exports = grammar({
       $.int,
       $.identifier,
       $.array,
+      $.tuple,
       $.unary_expression,
       $.binary_expression,
       $.ternary_expression,
@@ -263,14 +264,19 @@ module.exports = grammar({
       '--',
     ),
 
-    
+    anonymous_inputs: $ => seq(
+      '(',
+      optional($.argument_list),
+      ')'
+    ),
 
     call_expression: $ => seq(
       optional($.parallel),
       $.identifier,
       '(',
       optional($.argument_list),
-      ')'
+      ')',
+      optional($.anonymous_inputs)
     ),
 
     argument_list: $ => seq(
@@ -357,6 +363,12 @@ module.exports = grammar({
       "[",
       commaSep1($._expression),
       "]"
+    ),
+
+    tuple: $ => seq(
+      '(',
+      commaSep1($._expression),
+      ')'
     ),
 
     _type: $ => choice(
