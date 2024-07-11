@@ -177,14 +177,22 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "custom"
+          "type": "SYMBOL",
+          "name": "custom"
         },
         {
-          "type": "STRING",
-          "value": "parallel"
+          "type": "SYMBOL",
+          "name": "parallel"
         }
       ]
+    },
+    "custom": {
+      "type": "STRING",
+      "value": "custom"
+    },
+    "parallel": {
+      "type": "STRING",
+      "value": "parallel"
     },
     "template_body": {
       "type": "SEQ",
@@ -936,6 +944,18 @@
     "call_expression": {
       "type": "SEQ",
       "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "parallel"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
         {
           "type": "SYMBOL",
           "name": "identifier"

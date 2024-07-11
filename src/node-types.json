@@ -635,6 +635,10 @@
         {
           "type": "identifier",
           "named": true
+        },
+        {
+          "type": "parallel",
+          "named": true
         }
       ]
     }
@@ -1474,7 +1478,21 @@
   {
     "type": "template_type",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "custom",
+          "named": true
+        },
+        {
+          "type": "parallel",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "ternary_expression",
@@ -2016,7 +2034,7 @@
   },
   {
     "type": "custom",
-    "named": false
+    "named": true
   },
   {
     "type": "custom_templates",
@@ -2064,7 +2082,7 @@
   },
   {
     "type": "parallel",
-    "named": false
+    "named": true
   },
   {
     "type": "pragma",

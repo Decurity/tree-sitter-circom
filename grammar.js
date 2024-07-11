@@ -99,9 +99,12 @@ module.exports = grammar({
     ),
 
     template_type: $ => choice(
-      "custom",
-      "parallel"
+      $.custom,
+      $.parallel
     ),
+
+    custom: $ => "custom",
+    parallel: $ => "parallel",
 
     template_body: $ => seq(
       "{",
@@ -263,6 +266,7 @@ module.exports = grammar({
     
 
     call_expression: $ => seq(
+      optional($.parallel),
       $.identifier,
       '(',
       optional($.argument_list),

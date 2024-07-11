@@ -49,3 +49,52 @@ template wrong (N, M) {
             (signal
               (signal_visability))
             (identifier)))))
+=====================================
+Parallel Template
+=====================================
+template parallel name(N, M) {
+    component rollupTx[nTx];
+    for (i = 0; i < nTx; i++) {
+        rollupTx[i] = parallel RollupTx(nLevels, maxFeeTx);
+    }
+}
+---
+(source_file
+      (template_definition
+        (template_type
+          (parallel))
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier))
+          (parameter
+            (identifier)))
+        (template_body
+          (variable_declaration_statement
+            (component)
+            (identifier)
+            (array_definition
+              (identifier)))
+          (for_statement
+            (expression_statement
+              (assignment_expression
+                (identifier)
+                (int)))
+            (expression_statement
+              (binary_expression
+                (identifier)
+                (identifier)))
+            (increment_expression
+              (identifier))
+            (block_statement
+              (expression_statement
+                (assignment_expression
+                  (array_access_expression
+                    (identifier)
+                    (identifier))
+                  (call_expression
+                    (parallel)
+                    (identifier)
+                    (argument_list
+                      (identifier)
+                      (identifier))))))))))
