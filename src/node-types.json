@@ -23,11 +23,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -55,7 +55,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -71,74 +71,7 @@
           "named": true
         },
         {
-          "type": "tuple",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "array",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array",
-          "named": true
-        },
-        {
-          "type": "array_access_expression",
-          "named": true
-        },
-        {
-          "type": "assignment_expression",
-          "named": true
-        },
-        {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "call_expression",
-          "named": true
-        },
-        {
-          "type": "decrement_expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "increment_expression",
-          "named": true
-        },
-        {
-          "type": "int",
-          "named": true
-        },
-        {
-          "type": "member_expression",
-          "named": true
-        },
-        {
-          "type": "parenthesized_expression",
-          "named": true
-        },
-        {
-          "type": "ternary_expression",
-          "named": true
-        },
-        {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -157,11 +90,11 @@
         "required": true,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -189,7 +122,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -205,7 +138,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -219,11 +152,11 @@
         "required": false,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -251,7 +184,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -267,7 +200,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -279,7 +212,7 @@
     }
   },
   {
-    "type": "array_definition",
+    "type": "array_expression",
     "named": true,
     "fields": {},
     "children": {
@@ -287,11 +220,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -319,7 +252,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -335,7 +268,74 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_access_expression",
+          "named": true
+        },
+        {
+          "type": "array_expression",
+          "named": true
+        },
+        {
+          "type": "assignment_expression",
+          "named": true
+        },
+        {
+          "type": "binary_expression",
+          "named": true
+        },
+        {
+          "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "decrement_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "increment_expression",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "member_expression",
+          "named": true
+        },
+        {
+          "type": "parenthesized_expression",
+          "named": true
+        },
+        {
+          "type": "ternary_expression",
+          "named": true
+        },
+        {
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -354,11 +354,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -386,7 +386,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -402,7 +402,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -421,11 +421,11 @@
         "required": true,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -453,7 +453,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -469,7 +469,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -569,11 +569,11 @@
         "required": true,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -601,7 +601,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -617,7 +617,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -641,6 +641,10 @@
           "named": true
         },
         {
+          "type": "component_declaration_statement",
+          "named": true
+        },
+        {
           "type": "expression_statement",
           "named": true
         },
@@ -654,6 +658,10 @@
         },
         {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "signal_declaration_statement",
           "named": true
         },
         {
@@ -702,22 +710,54 @@
   {
     "type": "circom_pragma_token",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "circom_version",
-          "named": true
-        }
-      ]
+    "fields": {
+      "version": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "circom_version",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
-    "type": "component",
+    "type": "component_declaration_statement",
     "named": true,
-    "fields": {}
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "call_expression",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "decrement_expression",
@@ -751,11 +791,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -783,7 +823,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -799,7 +839,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -818,11 +858,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -839,6 +879,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "component_declaration_statement",
           "named": true
         },
         {
@@ -866,7 +910,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -882,11 +926,15 @@
           "named": true
         },
         {
+          "type": "signal_declaration_statement",
+          "named": true
+        },
+        {
           "type": "ternary_expression",
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -917,6 +965,10 @@
           "named": true
         },
         {
+          "type": "component_declaration_statement",
+          "named": true
+        },
+        {
           "type": "expression_statement",
           "named": true
         },
@@ -930,6 +982,10 @@
         },
         {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "signal_declaration_statement",
           "named": true
         },
         {
@@ -947,6 +1003,16 @@
     "type": "function_definition",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "function_body",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -959,13 +1025,9 @@
       }
     },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "function_body",
-          "named": true
-        },
         {
           "type": "parameter_list",
           "named": true
@@ -982,11 +1044,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1003,6 +1065,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "component_declaration_statement",
           "named": true
         },
         {
@@ -1030,7 +1096,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1046,11 +1112,15 @@
           "named": true
         },
         {
+          "type": "signal_declaration_statement",
+          "named": true
+        },
+        {
           "type": "ternary_expression",
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -1110,15 +1180,22 @@
   {
     "type": "main_component_definition",
     "named": true,
-    "fields": {},
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "call_expression",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
-        {
-          "type": "call_expression",
-          "named": true
-        },
         {
           "type": "main_component_public_signals",
           "named": true
@@ -1150,11 +1227,11 @@
         "required": true,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -1182,7 +1259,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -1198,7 +1275,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -1258,11 +1335,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1290,7 +1367,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1306,7 +1383,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -1344,11 +1421,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1376,7 +1453,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1392,7 +1469,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -1403,9 +1480,92 @@
     }
   },
   {
-    "type": "signal",
+    "type": "signal_declaration_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_access_expression",
+            "named": true
+          },
+          {
+            "type": "array_expression",
+            "named": true
+          },
+          {
+            "type": "assignment_expression",
+            "named": true
+          },
+          {
+            "type": "binary_expression",
+            "named": true
+          },
+          {
+            "type": "call_expression",
+            "named": true
+          },
+          {
+            "type": "decrement_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "increment_expression",
+            "named": true
+          },
+          {
+            "type": "int_literal",
+            "named": true
+          },
+          {
+            "type": "member_expression",
+            "named": true
+          },
+          {
+            "type": "parenthesized_expression",
+            "named": true
+          },
+          {
+            "type": "ternary_expression",
+            "named": true
+          },
+          {
+            "type": "tuple_expression",
+            "named": true
+          },
+          {
+            "type": "unary_expression",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": false,
@@ -1490,6 +1650,10 @@
           "named": true
         },
         {
+          "type": "component_declaration_statement",
+          "named": true
+        },
+        {
           "type": "expression_statement",
           "named": true
         },
@@ -1503,6 +1667,10 @@
         },
         {
           "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "signal_declaration_statement",
           "named": true
         },
         {
@@ -1520,6 +1688,16 @@
     "type": "template_definition",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "template_body",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1529,22 +1707,24 @@
             "named": true
           }
         ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "template_type",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "parameter_list",
-          "named": true
-        },
-        {
-          "type": "template_body",
-          "named": true
-        },
-        {
-          "type": "template_type",
           "named": true
         }
       ]
@@ -1578,11 +1758,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1610,7 +1790,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1626,7 +1806,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -1637,7 +1817,7 @@
     }
   },
   {
-    "type": "tuple",
+    "type": "tuple_expression",
     "named": true,
     "fields": {},
     "children": {
@@ -1645,11 +1825,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1677,7 +1857,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1693,7 +1873,7 @@
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -1712,11 +1892,11 @@
         "required": true,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -1744,7 +1924,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -1760,7 +1940,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -1797,16 +1977,36 @@
     "type": "variable_declaration_statement",
     "named": true,
     "fields": {
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array_type",
+            "named": true
+          }
+        ]
+      },
       "value": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "array",
+            "type": "array_access_expression",
             "named": true
           },
           {
-            "type": "array_access_expression",
+            "type": "array_expression",
             "named": true
           },
           {
@@ -1834,7 +2034,7 @@
             "named": true
           },
           {
-            "type": "int",
+            "type": "int_literal",
             "named": true
           },
           {
@@ -1850,7 +2050,7 @@
             "named": true
           },
           {
-            "type": "tuple",
+            "type": "tuple_expression",
             "named": true
           },
           {
@@ -1859,32 +2059,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array_definition",
-          "named": true
-        },
-        {
-          "type": "component",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "signal",
-          "named": true
-        },
-        {
-          "type": "var",
-          "named": true
-        }
-      ]
     }
   },
   {
@@ -1896,11 +2070,11 @@
       "required": true,
       "types": [
         {
-          "type": "array",
+          "type": "array_access_expression",
           "named": true
         },
         {
-          "type": "array_access_expression",
+          "type": "array_expression",
           "named": true
         },
         {
@@ -1917,6 +2091,10 @@
         },
         {
           "type": "call_expression",
+          "named": true
+        },
+        {
+          "type": "component_declaration_statement",
           "named": true
         },
         {
@@ -1944,7 +2122,7 @@
           "named": true
         },
         {
-          "type": "int",
+          "type": "int_literal",
           "named": true
         },
         {
@@ -1960,11 +2138,15 @@
           "named": true
         },
         {
+          "type": "signal_declaration_statement",
+          "named": true
+        },
+        {
           "type": "ternary_expression",
           "named": true
         },
         {
-          "type": "tuple",
+          "type": "tuple_expression",
           "named": true
         },
         {
@@ -2227,7 +2409,7 @@
     "named": false
   },
   {
-    "type": "int",
+    "type": "int_literal",
     "named": true
   },
   {
@@ -2268,7 +2450,7 @@
   },
   {
     "type": "var",
-    "named": true
+    "named": false
   },
   {
     "type": "while",

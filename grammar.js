@@ -60,27 +60,63 @@ module.exports = grammar({
 
     // Pragma
     pragma_directive: $ => seq(
-      "pragma",
+      'pragma',
       choice($.circom_pragma_token, $.circom_custom_templates_token),
       $._semicolon,
     ),
 
-    circom_custom_templates_token: $ => prec(1, "custom_templates"),
+    circom_custom_templates_token: $ => prec(1, 'custom_templates'),
 
     circom_pragma_token: $ => seq(
       $._circom,
-      $.circom_version
+      field('version', $.circom_version)
     ),
 
-    _circom: $ => prec(1, "circom"),
-    circom_version: $ => /"?\.? ?(\d|\*)+(\. ?(\d|\*)+ ?(\.(\d|\*)+)?)?"?/,
+    _circom: $ => prec(1, 'circom'),
+
+    circom_version: $ => /'?\.? ?(\d|\*)+(\. ?(\d|\*)+ ?(\.(\d|\*)+)?)?'?/,
 
     // Include
     include_directive: $ => seq(
-      "include",
+      'include',
       field('source', $.string),
       $._semicolon
     ),
+
+    string: $ => choice(
+      seq( 
+        '"',
+        repeat(choice(
+            $._string_immediate_elt_inside_double_quote,
+            $._escape_sequence
+        )),
+        '"'
+      ),
+      seq(
+        "'",
+        repeat(choice(
+            $._string_immediate_elt_inside_quote,
+            $._escape_sequence
+        )),
+        "'"
+      )
+    ),
+
+    _escape_sequence: $ => token.immediate(seq(
+      '\\',
+      choice(
+        /[^xu0-7]/,
+        /[0-7]{1,3}/,
+        /x[0-9a-fA-F]{2}/,
+        /u[0-9a-fA-F]{4}/
+      )
+    )),
+
+    _string_immediate_elt_inside_double_quote: $ =>
+      token.immediate(prec(PREC.STRING, /[^"\\\n]+|\\\r?\n/)),
+
+    _string_immediate_elt_inside_quote: $ =>
+      token.immediate(prec(PREC.STRING, /[^'\\\n]+|\\\r?\n/)),
 
     //  -- [ Definition ] --
     _definition: $ => choice(
@@ -89,13 +125,12 @@ module.exports = grammar({
       $.main_component_definition
     ),
 
-
     template_definition: $ => seq(
-      "template",
-      optional($.template_type),
-      field("name", $.identifier),
+      'template',
+      optional(field('type', $.template_type)),
+      field('name', $.identifier),
       $.parameter_list,
-      $.template_body
+      field('body', $.template_body)
     ),
 
     template_type: $ => choice(
@@ -103,45 +138,50 @@ module.exports = grammar({
       $.parallel
     ),
 
-    custom: $ => "custom",
-    parallel: $ => "parallel",
-
     template_body: $ => seq(
-      "{",
+      '{',
           repeat($._statement),
-      "}",
+      '}',
     ),
 
     function_definition: $ => seq(
-      "function",
-      field("name", $.identifier),
+      'function',
+      field('name', $.identifier),
       $.parameter_list,
-      $.function_body
+      field('body', $.function_body)
     ),
 
     function_body: $ => seq(
-      "{",
+      '{',
           repeat($._statement),
-      "}",
+      '}',
+    ),
+
+    parameter_list: $ => seq(
+      '(', commaSep($.parameter), ')'
+    ),
+
+    parameter: $ => seq(
+      $.identifier
     ),
 
     main_component_definition: $ => seq(
-      "component",
-      "main",
+      'component',
+      'main',
       optional($.main_component_public_signals),
-      "=",
-      $.call_expression,
+      '=',
+      field('value', $.call_expression),
       $._semicolon
 
     ),
 
     main_component_public_signals: $ => seq(
-      "{",
-      "public",
-      "[",
+      '{',
+      'public',
+      '[',
       commaSep1($.parameter),
-      "]",
-      "}"
+      ']',
+      '}'
     ),
 
     // -- [ Statements ] --
@@ -151,11 +191,13 @@ module.exports = grammar({
       $.if_statement,
       $.for_statement,
       $.while_statement,
+      $.expression_statement,
+      $.signal_declaration_statement,
       $.variable_declaration_statement,
-      $.expression_statement
+      $.component_declaration_statement,
     ),
 
-    block_statement: $ => seq('{', repeat($._statement), "}"),
+    block_statement: $ => seq('{', repeat($._statement), '}'),
     
     expression_statement: $ => seq($._expression, $._semicolon),
 
@@ -179,34 +221,81 @@ module.exports = grammar({
       'return', $._expression, $._semicolon
     ),
 
-    variable_declaration_statement: $ => seq(
-      $._type,
-      commaSep1($._variable_initialization),
+    signal_declaration_statement: $ => seq(
+      'signal',
+      optional($.signal_visability),
+      optional($.signal_tags),
+      commaSep1($._signal_declaration),
       $._semicolon
     ),
 
-    _variable_initialization: $ => prec.left(1, seq(
-      commaSep1($.identifier),
-      optional($.array_definition),
+    _signal_declaration: $ => prec.left(1, seq(
+      field('name', $.identifier),
+      optional(field('type', $.array_type)),
       optional(seq(
         choice(
-          '=',
-          '<==',
-          '==>',
-          '<--',
-          '-->'
-        ), 
-        field("value", $._expression)
+          "<==",
+          "<--"
+        ),
+        field('value', $._expression)
       )))
     ),
 
-    // Expressions
+    signal_visability: $ => choice(
+      'input',
+      'output'
+    ),
 
+    signal_tags: $ => seq(
+      '{',
+      commaSep1($.identifier),
+      '}'
+    ),
+
+    variable_declaration_statement: $ => seq(
+      'var',
+      commaSep1($._variable_declaration),
+      $._semicolon
+    ),
+
+    _variable_declaration: $ => prec.left(1, seq(
+      field('name', $.identifier),
+      optional(field('type', $.array_type)),
+      optional(seq(
+        '=',
+        field('value', $._expression)
+      )))
+    ),
+
+    component_declaration_statement: $ => prec.left(1, seq(
+      'component',
+      commaSep1($._component_declaration),
+      $._semicolon
+    )),
+
+    _component_declaration: $ => seq(
+      field('name', $.identifier),
+      optional(field('type', $.array_type)),
+      optional(seq(
+        '=',
+        field('value', $.call_expression)
+      ))
+    ),
+
+    array_type: $ => prec.left(1, repeat1(
+      seq(
+        '[',
+        $._expression,
+        ']',
+      )
+    )),
+
+    // -- [ Expressions ] --
     _expression: $ => choice(
-      $.int,
       $.identifier,
-      $.array,
-      $.tuple,
+      $.int_literal,
+      $.array_expression,
+      $.tuple_expression,
       $.unary_expression,
       $.binary_expression,
       $.ternary_expression,
@@ -219,10 +308,20 @@ module.exports = grammar({
       $.assignment_expression,
     ),
 
+    array_expression: $ => seq(
+      '[',
+      commaSep1($._expression),
+      ']'
+    ),
+
+    tuple_expression: $ => seq(
+      '(',
+      commaSep1($._expression),
+      ')'
+    ),
+
     assignment_expression: $ => prec.right(1, seq(
-      choice(
-        $._expression
-      ),
+      $._expression,
       choice(
         '<==',
         '==>',
@@ -264,19 +363,19 @@ module.exports = grammar({
       '--',
     ),
 
-    anonymous_inputs: $ => seq(
-      '(',
-      optional($.argument_list),
-      ')'
-    ),
-
-    call_expression: $ => seq(
+    call_expression: $ => prec.left(1, seq(
       optional($.parallel),
       $.identifier,
       '(',
       optional($.argument_list),
       ')',
       optional($.anonymous_inputs)
+    )),
+
+    anonymous_inputs: $ => seq(
+      '(',
+      optional($.argument_list),
+      ')'
     ),
 
     argument_list: $ => seq(
@@ -306,7 +405,7 @@ module.exports = grammar({
     parenthesized_expression: $ => prec(2, seq('(', $._expression, ')')),
 
     ternary_expression: $ => prec.left(
-      seq($._expression, "?", $._expression, ':', $._expression)
+      seq($._expression, '?', $._expression, ':', $._expression)
     ),
 
     unary_expression: $ => choice(...[
@@ -357,103 +456,11 @@ module.exports = grammar({
 
     identifier: $ => /[a-zA-Z$_][a-zA-Z0-9$_]*/,
 
-    int: $ => /\d+/,
+    int_literal: $ => /\d+/,
 
-    array: $ => seq(
-      "[",
-      commaSep1($._expression),
-      "]"
-    ),
+    custom: $ => 'custom',
 
-    tuple: $ => seq(
-      '(',
-      commaSep1($._expression),
-      ')'
-    ),
-
-    _type: $ => choice(
-      $.signal,
-      $.var,
-      $.component
-    ),
-
-    array_definition: $ => repeat1(
-      seq(
-        "[",
-        $._expression,
-        "]",
-      )
-    ),
-
-    var: $ => "var",
-
-    component: $ => "component",
-
-    signal: $ => seq(
-      'signal',
-      optional($.signal_visability),
-      optional($.signal_tags)
-    ),
-
-    signal_visability: $ => choice(
-      "input",
-      "output"
-    ),
-
-    signal_tags: $ => seq(
-      "{",
-      $.identifier,
-      repeat(
-        seq(
-          ",",
-          $.identifier
-        )
-      ),
-      "}"
-    ),
-
-    parameter_list: $ => seq(
-      '(', commaSep($.parameter), ')'
-    ),
-
-    parameter: $ => seq(
-      $.identifier
-    ),
-
-    _escape_sequence: $ => token.immediate(seq(
-      '\\',
-      choice(
-        /[^xu0-7]/,
-        /[0-7]{1,3}/,
-        /x[0-9a-fA-F]{2}/,
-        /u[0-9a-fA-F]{4}/
-      )
-    )),
-
-    _string_immediate_elt_inside_double_quote: $ =>
-      token.immediate(prec(PREC.STRING, /[^"\\\n]+|\\\r?\n/)),
-
-    _string_immediate_elt_inside_quote: $ =>
-      token.immediate(prec(PREC.STRING, /[^'\\\n]+|\\\r?\n/)),
-
-    string: $ => choice(
-      seq( 
-        '"',
-        repeat(choice(
-            $._string_immediate_elt_inside_double_quote,
-            $._escape_sequence
-        )),
-        '"'
-      ),
-      seq(
-        "'",
-        repeat(choice(
-            $._string_immediate_elt_inside_quote,
-            $._escape_sequence
-        )),
-        "'"
-      )
-    ),
+    parallel: $ => 'parallel',
 
     comment: $ => token(
       prec(PREC.COMMENT,
@@ -470,7 +477,6 @@ module.exports = grammar({
 
   }
 });
-
 
 function commaSep1(rule) {
   return seq(
