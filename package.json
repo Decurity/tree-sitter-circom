@@ -38,7 +38,13 @@
   "tree-sitter": [
     {
       "scope": "source.circom",
-      "injection-regex": "^circom$"
+      "injection-regex": "^circom$",
+      "file-types": [
+        "circom"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
     }
   ]
 }

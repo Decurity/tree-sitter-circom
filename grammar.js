@@ -162,7 +162,7 @@ module.exports = grammar({
     ),
 
     parameter: $ => seq(
-      $.identifier
+      field('name', $.identifier)
     ),
 
     main_component_definition: $ => seq(
@@ -379,10 +379,10 @@ module.exports = grammar({
     ),
 
     argument_list: $ => seq(
-      $._expression,
+      field('argument', $._expression),
       repeat(seq(
         ',',
-        $._expression
+        field('argument', $._expression)
       ))
     ),
 
@@ -454,7 +454,7 @@ module.exports = grammar({
 
     _semicolon: $ => ';',
 
-    identifier: $ => /[a-zA-Z$_][a-zA-Z0-9$_]*/,
+    identifier: $ => token(/[a-zA-Z0-9_$]+/),
 
     int_literal: $ => /\d+/,
 
