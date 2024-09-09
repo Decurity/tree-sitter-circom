@@ -11,7 +11,7 @@ function simple () {
         (parameter_list)
         (function_body
           (return_statement
-            (int)))))
+            (int_literal)))))
 =====================================
 Simple Function with Arguments
 =====================================

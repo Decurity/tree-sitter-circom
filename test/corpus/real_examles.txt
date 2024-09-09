@@ -36,45 +36,41 @@ template Fibonacci(n) {
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+                  (int_literal)))))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (binary_expression
                 (identifier)
-                (int))))
+                (int_literal))))
           (expression_statement
             (array_access_expression
               (assignment_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (identifier))
-              (int)))
+              (int_literal)))
           (expression_statement
             (array_access_expression
               (assignment_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (identifier))
-              (int)))
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -93,11 +89,11 @@ template Fibonacci(n) {
                         (identifier))
                       (binary_expression
                         (identifier)
-                        (int)))
+                        (int_literal)))
                     (identifier))
                   (binary_expression
                     (identifier)
-                    (int))))))
+                    (int_literal))))))
           (expression_statement
             (array_access_expression
               (assignment_expression
@@ -257,11 +253,10 @@ template Sudoku(n_sqrt) {
             (identifier)))
         (function_body
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int)
+            (int_literal)
             (identifier)
-            (int))
+            (int_literal))
           (while_statement
             (binary_expression
               (identifier)
@@ -273,7 +268,7 @@ template Sudoku(n_sqrt) {
               (expression_statement
                 (assignment_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (return_statement
             (identifier))))
       (comment)
@@ -281,14 +276,12 @@ template Sudoku(n_sqrt) {
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal)
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
             (identifier))
           (comment)
           (comment)
@@ -296,15 +289,15 @@ template Sudoku(n_sqrt) {
             (assignment_expression
               (identifier)
               (binary_expression
-                (int)
+                (int_literal)
                 (parenthesized_expression
                   (array_access_expression
                     (binary_expression
                       (array_access_expression
                         (identifier)
-                        (int))
+                        (int_literal))
                       (identifier))
-                    (int))))))
+                    (int_literal))))))
           (expression_statement
             (assignment_expression
               (binary_expression
@@ -314,10 +307,10 @@ template Sudoku(n_sqrt) {
                     (binary_expression
                       (array_access_expression
                         (identifier)
-                        (int))
+                        (int_literal))
                       (identifier))
-                    (int))))
-              (int)))))
+                    (int_literal))))
+              (int_literal)))))
       (comment)
       (template_definition
         (identifier)
@@ -331,26 +324,22 @@ template Sudoku(n_sqrt) {
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+                  (int_literal)))))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -368,7 +357,7 @@ template Sudoku(n_sqrt) {
                       (binary_expression
                         (identifier)
                         (identifier)))
-                    (int))))
+                    (int_literal))))
               (expression_statement
                 (assignment_expression
                   (binary_expression
@@ -378,10 +367,10 @@ template Sudoku(n_sqrt) {
                     (parenthesized_expression
                       (array_access_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier))
                         (identifier))))
-                  (int)))
+                  (int_literal)))
               (expression_statement
                 (array_access_expression
                   (assignment_expression
@@ -389,7 +378,7 @@ template Sudoku(n_sqrt) {
                     (binary_expression
                       (parenthesized_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier)))
                       (identifier)))
                   (identifier)))))
@@ -414,29 +403,25 @@ template Sudoku(n_sqrt) {
                 (binary_expression
                   (identifier)
                   (identifier)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (call_expression
                 (identifier)
                 (argument_list
                   (identifier)))
-              (int)))
-          (variable_declaration_statement
-            (component)
+              (int_literal)))
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (identifier))))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -462,10 +447,10 @@ template Sudoku(n_sqrt) {
                     (identifier)
                     (parenthesized_expression
                       (binary_expression
-                        (int)
+                        (int_literal)
                         (identifier))))
                   (identifier))
-                (int))))
+                (int_literal))))
           (comment)))
       (comment)
       (template_definition
@@ -474,24 +459,21 @@ template Sudoku(n_sqrt) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)
               (identifier)))
           (comment)
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -501,9 +483,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -529,7 +510,7 @@ template Sudoku(n_sqrt) {
                             (identifier))
                           (identifier))
                         (property_identifier))
-                      (array
+                      (array_expression
                         (array_access_expression
                           (identifier)
                           (identifier))
@@ -543,33 +524,29 @@ template Sudoku(n_sqrt) {
             (identifier)))
         (template_body
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
               (identifier)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)
               (identifier)))
           (comment)
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)
               (identifier)))
           (comment)
           (comment)
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -579,9 +556,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -610,19 +586,17 @@ template Sudoku(n_sqrt) {
                                 (identifier))
                               (identifier))
                             (identifier))))
-                      (int)))))))
+                      (int_literal)))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -632,9 +606,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -652,7 +625,7 @@ template Sudoku(n_sqrt) {
                       (call_expression
                         (identifier)
                         (argument_list
-                          (int)
+                          (int_literal)
                           (identifier)))))
                   (expression_statement
                     (array_access_expression
@@ -669,16 +642,14 @@ template Sudoku(n_sqrt) {
                         (identifier))
                       (identifier)))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -688,9 +659,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -701,7 +671,7 @@ template Sudoku(n_sqrt) {
                   (if_statement
                     (binary_expression
                       (identifier)
-                      (int))
+                      (int_literal))
                     (block_statement
                       (expression_statement
                         (assignment_expression
@@ -726,16 +696,14 @@ template Sudoku(n_sqrt) {
                           (identifier))
                         (identifier))
                       (identifier)))))))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -745,9 +713,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -758,7 +725,7 @@ template Sudoku(n_sqrt) {
                   (if_statement
                     (binary_expression
                       (identifier)
-                      (int))
+                      (int_literal))
                     (block_statement
                       (expression_statement
                         (assignment_expression
@@ -784,20 +751,17 @@ template Sudoku(n_sqrt) {
                         (identifier))
                       (identifier)))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -807,9 +771,8 @@ template Sudoku(n_sqrt) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
@@ -829,24 +792,20 @@ template Sudoku(n_sqrt) {
                           (identifier)))))
                   (comment)
                   (variable_declaration_statement
-                    (var)
                     (identifier)
                     (binary_expression
                       (identifier)
                       (identifier)))
                   (variable_declaration_statement
-                    (var)
                     (identifier)
                     (binary_expression
                       (identifier)
                       (identifier)))
                   (variable_declaration_statement
-                    (var)
                     (identifier)
-                    (int))
+                    (int_literal))
                   (for_statement
                     (variable_declaration_statement
-                      (var)
                       (identifier)
                       (identifier))
                     (expression_statement
@@ -860,7 +819,6 @@ template Sudoku(n_sqrt) {
                     (block_statement
                       (for_statement
                         (variable_declaration_statement
-                          (var)
                           (identifier)
                           (identifier))
                         (expression_statement
@@ -1334,11 +1292,10 @@ template FloatAdd(k, p) {
             (identifier)))
         (function_body
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int)
+            (int_literal)
             (identifier)
-            (int))
+            (int_literal))
           (while_statement
             (binary_expression
               (identifier)
@@ -1350,7 +1307,7 @@ template FloatAdd(k, p) {
               (expression_statement
                 (assignment_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (return_statement
             (identifier))))
       (comment)
@@ -1358,21 +1315,17 @@ template FloatAdd(k, p) {
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
           (comment)
@@ -1401,30 +1354,25 @@ template FloatAdd(k, p) {
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+                  (int_literal)))))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -1442,7 +1390,7 @@ template FloatAdd(k, p) {
                       (binary_expression
                         (identifier)
                         (identifier)))
-                    (int))))
+                    (int_literal))))
               (expression_statement
                 (assignment_expression
                   (binary_expression
@@ -1452,10 +1400,10 @@ template FloatAdd(k, p) {
                     (parenthesized_expression
                       (array_access_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier))
                         (identifier))))
-                  (int)))
+                  (int_literal)))
               (expression_statement
                 (array_access_expression
                   (assignment_expression
@@ -1463,13 +1411,12 @@ template FloatAdd(k, p) {
                     (binary_expression
                       (parenthesized_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier)))
                       (identifier)))
                   (identifier)))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -1479,7 +1426,7 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -1487,7 +1434,7 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (member_expression
@@ -1504,17 +1451,14 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -1526,8 +1470,7 @@ template FloatAdd(k, p) {
               (identifier)))
           (comment)
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -1539,8 +1482,7 @@ template FloatAdd(k, p) {
               (identifier)))
           (comment)
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -1554,8 +1496,7 @@ template FloatAdd(k, p) {
               (identifier)))
           (comment)
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -1570,11 +1511,10 @@ template FloatAdd(k, p) {
                 (identifier)
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -1613,7 +1553,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (identifier)
                 (property_identifier))
-              (int)))))
+              (int_literal)))))
       (comment)
       (template_definition
         (identifier)
@@ -1630,17 +1570,14 @@ template FloatAdd(k, p) {
                 (binary_expression
                   (identifier)
                   (identifier)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -1653,18 +1590,16 @@ template FloatAdd(k, p) {
                 (property_identifier))
               (identifier)))
           (comment)
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (binary_expression
                 (identifier)
                 (identifier))))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -1687,8 +1622,7 @@ template FloatAdd(k, p) {
                     (identifier)
                     (identifier))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -1719,21 +1653,17 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (expression_statement
             (call_expression
@@ -1743,22 +1673,21 @@ template FloatAdd(k, p) {
                   (identifier)
                   (identifier)))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (assignment_expression
               (array_access_expression
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -1766,32 +1695,30 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (binary_expression
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (parenthesized_expression
                       (binary_expression
                         (identifier)
-                        (int)))))
+                        (int_literal)))))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (parenthesized_expression
                       (binary_expression
                         (binary_expression
                           (identifier)
                           (identifier))
-                        (int))))))))
-          (variable_declaration_statement
-            (signal)
+                        (int_literal))))))))
+          (signal_declaration_statement
             (identifier)
             (member_expression
               (identifier)
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
@@ -1799,26 +1726,24 @@ template FloatAdd(k, p) {
           (comment)
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
               (parenthesized_expression
                 (binary_expression
-                  (int)
+                  (int_literal)
                   (parenthesized_expression
                     (binary_expression
                       (identifier)
-                      (int)))))))
-          (variable_declaration_statement
-            (component)
+                      (int_literal)))))))
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (identifier))))
           (expression_statement
             (assignment_expression
@@ -1827,44 +1752,38 @@ template FloatAdd(k, p) {
                 (property_identifier))
               (identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (member_expression
               (identifier)
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (identifier))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
-              (int)))
+              (int_literal)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (parenthesized_expression
               (binary_expression
-                (int)
+                (int_literal)
                 (identifier))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -1888,7 +1807,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (property_identifier))
               (identifier)))
           (expression_statement
@@ -1896,7 +1815,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (property_identifier))
               (identifier)))
           (expression_statement
@@ -1904,7 +1823,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (property_identifier))
               (identifier)))
           (expression_statement
@@ -1912,7 +1831,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (array_access_expression
                   (identifier)
-                  (int))
+                  (int_literal))
                 (property_identifier))
               (identifier)))
           (expression_statement
@@ -1921,7 +1840,7 @@ template FloatAdd(k, p) {
                 (assignment_expression
                   (identifier)
                   (identifier))
-                (int))
+                (int_literal))
               (property_identifier)))
           (expression_statement
             (member_expression
@@ -1929,7 +1848,7 @@ template FloatAdd(k, p) {
                 (assignment_expression
                   (identifier)
                   (identifier))
-                (int))
+                (int_literal))
               (property_identifier)))))
       (template_definition
         (identifier)
@@ -1937,25 +1856,21 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -1973,7 +1888,7 @@ template FloatAdd(k, p) {
                       (binary_expression
                         (identifier)
                         (identifier)))
-                    (int))))
+                    (int_literal))))
               (expression_statement
                 (assignment_expression
                   (binary_expression
@@ -1983,19 +1898,17 @@ template FloatAdd(k, p) {
                     (parenthesized_expression
                       (array_access_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier))
                         (identifier))))
-                  (int)))))
+                  (int_literal)))))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -2010,7 +1923,7 @@ template FloatAdd(k, p) {
                     (binary_expression
                       (parenthesized_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier)))
                       (identifier)))
                   (identifier)))))
@@ -2024,9 +1937,9 @@ template FloatAdd(k, p) {
                     (identifier)))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))
-              (int)))))
+              (int_literal)))))
       (template_definition
         (identifier)
         (parameter_list
@@ -2039,30 +1952,26 @@ template FloatAdd(k, p) {
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+                  (int_literal)))))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (array_access_expression
               (binary_expression
@@ -2073,13 +1982,13 @@ template FloatAdd(k, p) {
                         (identifier)
                         (property_identifier))
                       (identifier))
-                    (int))
+                    (int_literal))
                   (parenthesized_expression
                     (binary_expression
-                      (int)
+                      (int_literal)
                       (identifier))))
                 (identifier))
-              (int)))
+              (int_literal)))
           (expression_statement
             (assignment_expression
               (member_expression
@@ -2092,7 +2001,7 @@ template FloatAdd(k, p) {
                 (assignment_expression
                   (identifier)
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier)))
                 (property_identifier))
               (identifier)))))
@@ -2103,35 +2012,29 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (call_expression
                 (identifier)
                 (argument_list
                   (identifier)))
-              (int)))
+              (int_literal)))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -2150,8 +2053,7 @@ template FloatAdd(k, p) {
                 (property_identifier))
               (identifier)))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -2163,7 +2065,7 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -2171,7 +2073,7 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -2187,28 +2089,25 @@ template FloatAdd(k, p) {
                     (member_expression
                       (identifier)
                       (property_identifier))
-                    (int)))
+                    (int_literal)))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))
-              (int)))
+              (int_literal)))
           (comment)
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
-          (variable_declaration_statement
-            (component)
+            (int_literal))
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -2246,10 +2145,10 @@ template FloatAdd(k, p) {
                     (identifier)
                     (parenthesized_expression
                       (binary_expression
-                        (int)
+                        (int_literal)
                         (parenthesized_expression
                           (binary_expression
-                            (int)
+                            (int_literal)
                             (identifier))))))))
               (expression_statement
                 (assignment_expression
@@ -2268,8 +2167,7 @@ template FloatAdd(k, p) {
                     (identifier))
                   (property_identifier)))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -2284,7 +2182,7 @@ template FloatAdd(k, p) {
               (member_expression
                 (identifier)
                 (property_identifier))
-              (int)))
+              (int_literal)))
           (expression_statement
             (assignment_expression
               (member_expression
@@ -2312,26 +2210,22 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (comment)
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -2340,7 +2234,6 @@ template FloatAdd(k, p) {
               (identifier))
             (block_statement
               (variable_declaration_statement
-                (var)
                 (identifier))
               (if_statement
                 (binary_expression
@@ -2348,7 +2241,7 @@ template FloatAdd(k, p) {
                     (binary_expression
                       (parenthesized_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier)))
                       (identifier)))
                   (parenthesized_expression
@@ -2356,21 +2249,21 @@ template FloatAdd(k, p) {
                       (identifier)
                       (parenthesized_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (parenthesized_expression
                             (binary_expression
                               (identifier)
-                              (int))))))))
+                              (int_literal))))))))
                 (block_statement
                   (expression_statement
                     (assignment_expression
                       (identifier)
-                      (int))))
+                      (int_literal))))
                 (block_statement
                   (expression_statement
                     (assignment_expression
                       (identifier)
-                      (int)))))
+                      (int_literal)))))
               (expression_statement
                 (assignment_expression
                   (array_access_expression
@@ -2379,14 +2272,12 @@ template FloatAdd(k, p) {
                   (identifier)))))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -2409,37 +2300,34 @@ template FloatAdd(k, p) {
                     (parenthesized_expression
                       (array_access_expression
                         (binary_expression
-                          (int)
+                          (int_literal)
                           (identifier))
                         (identifier))))
-                  (int)))
+                  (int_literal)))
               (comment)))
           (expression_statement
             (assignment_expression
               (binary_expression
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier)))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))
-              (int)))
+              (int_literal)))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int))
+            (int_literal))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -2456,7 +2344,7 @@ template FloatAdd(k, p) {
                     (identifier))
                   (parenthesized_expression
                     (binary_expression
-                      (int)
+                      (int_literal)
                       (identifier)))))
               (expression_statement
                 (binary_expression
@@ -2467,27 +2355,26 @@ template FloatAdd(k, p) {
                     (identifier))
                   (parenthesized_expression
                     (binary_expression
-                      (int)
+                      (int_literal)
                       (parenthesized_expression
                         (binary_expression
                           (identifier)
-                          (int)))))))))
-          (variable_declaration_statement
-            (component)
+                          (int_literal)))))))))
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (assignment_expression
               (array_access_expression
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -2495,7 +2382,7 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -2505,14 +2392,13 @@ template FloatAdd(k, p) {
                     (member_expression
                       (identifier)
                       (property_identifier))
-                    (int)))
+                    (int_literal)))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))
-              (int)))
-          (variable_declaration_statement
-            (component)
+              (int_literal)))
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -2524,17 +2410,17 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (binary_expression
                 (identifier)
-                (int))))
+                (int_literal))))
           (expression_statement
             (assignment_expression
               (array_access_expression
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
           (expression_statement
             (assignment_expression
@@ -2544,12 +2430,12 @@ template FloatAdd(k, p) {
                     (member_expression
                       (identifier)
                       (property_identifier))
-                    (int)))
+                    (int_literal)))
                 (parenthesized_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))))
-              (int)))))
+              (int_literal)))))
       (comment)
       (template_definition
         (identifier)
@@ -2561,25 +2447,20 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (expression_statement
             (call_expression
@@ -2589,15 +2470,14 @@ template FloatAdd(k, p) {
                   (identifier)
                   (identifier)))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (assignment_expression
               (member_expression
@@ -2612,20 +2492,18 @@ template FloatAdd(k, p) {
               (identifier)))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (identifier))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
                 (binary_expression
                   (identifier)
-                  (int))))
+                  (int_literal))))
             (increment_expression
               (identifier))
             (block_statement
@@ -2650,7 +2528,7 @@ template FloatAdd(k, p) {
                     (identifier))
                   (parenthesized_expression
                     (binary_expression
-                      (int)
+                      (int_literal)
                       (parenthesized_expression
                         (binary_expression
                           (identifier)
@@ -2679,41 +2557,35 @@ template FloatAdd(k, p) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -2749,12 +2621,10 @@ template FloatAdd(k, p) {
                   (identifier)))))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (component)
+            (array_type
+              (int_literal)))
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -2763,16 +2633,15 @@ template FloatAdd(k, p) {
                   (binary_expression
                     (identifier)
                     (identifier))
-                  (int)))))
+                  (int_literal)))))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -2790,11 +2659,11 @@ template FloatAdd(k, p) {
                             (identifier))
                           (parenthesized_expression
                             (binary_expression
-                              (int)
+                              (int_literal)
                               (parenthesized_expression
                                 (binary_expression
                                   (identifier)
-                                  (int)))))))
+                                  (int_literal)))))))
                       (identifier)))
                   (identifier)))
               (expression_statement
@@ -2807,51 +2676,46 @@ template FloatAdd(k, p) {
                       (identifier))
                     (identifier))
                   (identifier)))))
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
             (member_expression
               (identifier)
               (property_identifier)))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (array_definition
-              (int))
-            (array
+            (array_type
+              (int_literal))
+            (array_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (array_access_expression
                 (identifier)
-                (int))))
+                (int_literal))))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (array_definition
-              (int))
-            (array
+            (array_type
+              (int_literal))
+            (array_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (array_access_expression
                 (identifier)
-                (int))))
-          (variable_declaration_statement
-            (component)
+                (int_literal))))
+          (component_declaration_statement
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -2891,46 +2755,40 @@ template FloatAdd(k, p) {
                     (identifier))
                   (identifier)))))
           (variable_declaration_statement
-            (var)
             (identifier)
             (member_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (member_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (member_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (member_expression
               (array_access_expression
                 (identifier)
-                (int))
+                (int_literal))
               (property_identifier)))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
               (identifier)))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -2942,20 +2800,19 @@ template FloatAdd(k, p) {
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (binary_expression
                 (identifier)
-                (int))))
+                (int_literal))))
           (expression_statement
             (assignment_expression
               (array_access_expression
                 (member_expression
                   (identifier)
                   (property_identifier))
-                (int))
+                (int_literal))
               (identifier)))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -2966,8 +2823,7 @@ template FloatAdd(k, p) {
                 (property_identifier))
               (identifier)))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)))
@@ -2987,31 +2843,28 @@ template FloatAdd(k, p) {
                   (property_identifier))
                 (identifier))
               (property_identifier)))
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier)
             (member_expression
               (identifier)
               (property_identifier)))
           (comment)
           (variable_declaration_statement
-            (var)
             (identifier)
-            (array_definition
-              (int))
-            (array
+            (array_type
+              (int_literal))
+            (array_expression
               (identifier)
               (identifier)))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (assignment_expression
               (member_expression
@@ -3038,17 +2891,14 @@ template FloatAdd(k, p) {
                 (identifier))
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (binary_expression
               (identifier)
               (identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
             (identifier))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -3057,9 +2907,9 @@ template FloatAdd(k, p) {
                 (identifier)
                 (binary_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (assignment_expression
               (member_expression
@@ -3078,8 +2928,7 @@ template FloatAdd(k, p) {
                 (identifier)
                 (property_identifier))
               (identifier)))
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
@@ -3088,9 +2937,9 @@ template FloatAdd(k, p) {
                 (identifier)
                 (binary_expression
                   (binary_expression
-                    (int)
+                    (int_literal)
                     (identifier))
-                  (int)))))
+                  (int_literal)))))
           (expression_statement
             (member_expression
               (assignment_expression
@@ -3108,11 +2957,10 @@ template FloatAdd(k, p) {
                 (identifier))
               (property_identifier)))
           (variable_declaration_statement
-            (var)
             (identifier)
-            (array_definition
-              (int))
-            (array
+            (array_type
+              (int_literal))
+            (array_expression
               (member_expression
                 (identifier)
                 (property_identifier))
@@ -3120,20 +2968,18 @@ template FloatAdd(k, p) {
                 (identifier)
                 (property_identifier))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -3178,7 +3024,7 @@ template FloatAdd(k, p) {
                 (assignment_expression
                   (identifier)
                   (identifier))
-                (int))
+                (int_literal))
               (property_identifier)))
           (expression_statement
             (member_expression
@@ -3186,7 +3032,7 @@ template FloatAdd(k, p) {
                 (assignment_expression
                   (identifier)
                   (identifier))
-                (int))
+                (int_literal))
               (property_identifier))))))
 =====================================
 Example 4, sha256
@@ -3249,29 +3095,25 @@ template Sha256Bytes(N) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -3287,7 +3129,7 @@ template Sha256Bytes(N) {
                   (call_expression
                     (identifier)
                     (argument_list
-                      (int)))))
+                      (int_literal)))))
               (expression_statement
                 (array_access_expression
                   (assignment_expression
@@ -3299,20 +3141,18 @@ template Sha256Bytes(N) {
                     (identifier))
                   (identifier)))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (call_expression
               (identifier)
               (argument_list
                 (binary_expression
                   (identifier)
-                  (int)))))
+                  (int_literal)))))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
@@ -3322,13 +3162,12 @@ template Sha256Bytes(N) {
             (block_statement
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
-                    (int)))
+                    (int_literal)))
                 (increment_expression
                   (identifier))
                 (block_statement
@@ -3344,29 +3183,27 @@ template Sha256Bytes(N) {
                               (binary_expression
                                 (binary_expression
                                   (identifier)
-                                  (int))
+                                  (int_literal))
                                 (identifier)))
                             (identifier))
                           (identifier))
                         (property_identifier))
                       (binary_expression
-                        (int)
+                        (int_literal)
                         (identifier))))))))
           (comment)
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
-              (int)))
+            (array_type
+              (int_literal)))
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -3378,16 +3215,15 @@ template Sha256Bytes(N) {
                   (call_expression
                     (identifier)
                     (argument_list
-                      (int)))))
+                      (int_literal)))))
               (for_statement
                 (variable_declaration_statement
-                  (var)
                   (identifier)
-                  (int))
+                  (int_literal))
                 (expression_statement
                   (binary_expression
                     (identifier)
-                    (int)))
+                    (int_literal)))
                 (increment_expression
                   (identifier))
                 (block_statement
@@ -3402,14 +3238,14 @@ template Sha256Bytes(N) {
                                 (identifier))
                               (property_identifier))
                             (binary_expression
-                              (int)
+                              (int_literal)
                               (identifier)))
                           (identifier))
                         (property_identifier))
                       (binary_expression
                         (binary_expression
                           (identifier)
-                          (int))
+                          (int_literal))
                         (identifier))))))
               (expression_statement
                 (member_expression

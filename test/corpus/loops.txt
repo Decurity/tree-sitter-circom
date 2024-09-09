@@ -17,13 +17,12 @@ function f1 (n) {
         (function_body
           (for_statement
             (variable_declaration_statement
-              (var)
               (identifier)
-              (int))
+              (int_literal))
             (expression_statement
               (binary_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (increment_expression
               (identifier))
             (block_statement
@@ -52,7 +51,7 @@ function f2 (n) {
           (while_statement
             (binary_expression
               (identifier)
-              (int))
+              (int_literal))
             (block_statement
               (expression_statement
                 (decrement_expression

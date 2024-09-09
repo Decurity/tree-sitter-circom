@@ -1,5 +1,5 @@
 =====================================
-Simple Signals  Declaration
+Simple Signals Declaration
 =====================================
 template test(){
   signal inter;
@@ -7,21 +7,18 @@ template test(){
   signal output out;
 }
 ---
- (source_file
+(source_file
       (template_definition
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (signal)
+          (signal_declaration_statement
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)))))
 =====================================
 Variable Declaration
@@ -30,13 +27,12 @@ template qwe(){
   var tmp;
 }
 ---
- (source_file
+(source_file
       (template_definition
         (identifier)
         (parameter_list)
         (template_body
           (variable_declaration_statement
-            (var)
             (identifier)))))
 =====================================
 Component Declaration
@@ -45,13 +41,12 @@ template qwe(){
   component tmp;
 }
 ---
- (source_file
+(source_file
       (template_definition
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)))))
 =====================================
 Input Signal Array Declaration
@@ -63,7 +58,7 @@ template test(N, M){
   signal input inArray[1][1];
 }
 ---
-(source_file
+    (source_file
       (template_definition
         (identifier)
         (parameter_list
@@ -72,32 +67,28 @@ template test(N, M){
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+            (array_type
+              (int_literal)))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
+            (array_type
               (identifier)
               (identifier)))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
-            (array_definition
-              (int)
-              (int))))))
+            (array_type
+              (int_literal)
+              (int_literal))))))
 =====================================
 Input Signal with tags Declaration
 =====================================
@@ -110,12 +101,11 @@ template plate(){
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability)
-              (signal_tags
-                (identifier)
-                (identifier)))
+          (signal_declaration_statement
+            (signal_visibility)
+            (signal_tags
+              (identifier)
+              (identifier))
             (identifier)))))
 =====================================
 Output Signal Declaration with initialization
@@ -129,9 +119,8 @@ template plate(){
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)
             (binary_expression
               (identifier)
@@ -149,11 +138,10 @@ template test(){
         (parameter_list)
         (template_body
           (variable_declaration_statement
-            (var)
             (identifier)
-            (int)
+            (int_literal)
             (identifier)
-            (int)))))
+            (int_literal)))))
 =====================================
 Multiple components declaration
 =====================================
@@ -166,7 +154,6 @@ template test(){
         (identifier)
         (parameter_list)
         (template_body
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
             (identifier)))))
