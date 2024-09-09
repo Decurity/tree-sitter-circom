@@ -41,13 +41,11 @@ template wrong (N, M) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier)))))
 =====================================
 Parallel Template
@@ -70,16 +68,15 @@ template parallel name(N, M) {
           (parameter
             (identifier)))
         (template_body
-          (variable_declaration_statement
-            (component)
+          (component_declaration_statement
             (identifier)
-            (array_definition
+            (array_type
               (identifier)))
           (for_statement
             (expression_statement
               (assignment_expression
                 (identifier)
-                (int)))
+                (int_literal)))
             (expression_statement
               (binary_expression
                 (identifier)

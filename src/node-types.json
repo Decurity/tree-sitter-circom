@@ -1577,7 +1577,7 @@
           "named": true
         },
         {
-          "type": "signal_visability",
+          "type": "signal_visibility",
           "named": true
         }
       ]
@@ -1599,7 +1599,7 @@
     }
   },
   {
-    "type": "signal_visability",
+    "type": "signal_visibility",
     "named": true,
     "fields": {}
   },
@@ -2272,6 +2272,10 @@
   },
   {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ";",
     "named": false
   },
   {

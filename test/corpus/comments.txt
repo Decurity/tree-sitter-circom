@@ -26,17 +26,14 @@ component main {public [in1,in2]} = Multiplier2();
         (parameter_list)
         (template_body
           (comment)
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
-          (variable_declaration_statement
-            (signal
-              (signal_visability))
+          (signal_declaration_statement
+            (signal_visibility)
             (identifier))
           (comment)
           (expression_statement

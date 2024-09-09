@@ -223,7 +223,7 @@ module.exports = grammar({
 
     signal_declaration_statement: $ => seq(
       'signal',
-      optional($.signal_visability),
+      optional($.signal_visibility),
       optional($.signal_tags),
       commaSep1($._signal_declaration),
       $._semicolon
@@ -241,7 +241,7 @@ module.exports = grammar({
       )))
     ),
 
-    signal_visability: $ => choice(
+    signal_visibility: $ => choice(
       'input',
       'output'
     ),
@@ -454,7 +454,7 @@ module.exports = grammar({
 
     _semicolon: $ => ';',
 
-    identifier: $ => token(/[a-zA-Z0-9_$]+/),
+    identifier: $ => token(/[$_]*[a-zA-Z][a-zA-Z$_0-9]*/),
 
     int_literal: $ => /\d+/,
 
@@ -486,8 +486,7 @@ function commaSep1(rule) {
               ',',
               rule
           )
-      ),
-      optional(','),
+      )
   );
 }
 
