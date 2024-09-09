@@ -47,25 +47,19 @@
 ; Keywords
 
 [
-; "pragma circom"
-; "pragma custom_templates"
  "public"
  "signal"
  "var"
-; "log"
-; "assert"
  "include"
  "input"
  "output"
  "public"
  "component"
-; "parallel"
 ] @keyword
 
 [
  "for"
  "while"
-; "do"
 ] @repeat
 
 [
@@ -107,36 +101,6 @@
   "&&"
   "||"
   ">>"
- ; ">>>"
-  "<<"
-  "&"
-  "^"
-  "|"
-  "+"
-  "-"
-  "*"
-  "/"
-  "%"
-  "**"
-  "<"
-  "<="
-  "=="
-  "!="
-  ">="
-  ">"
-  "!"
-  "~"
-  "-"
-  "+"
-  "++"
-  "--"
-] @operator
-
-[
-  "&&"
-  "||"
-  ">>"
- ; ">>>"
   "<<"
   "&"
   "^"
