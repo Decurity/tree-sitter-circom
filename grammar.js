@@ -24,7 +24,7 @@ const PREC = {
   INC: 11,
   CALL: 12,
   NEW: 13,
-  MEMBER: 1
+  MEMBER: 14
 }
 
 
@@ -34,10 +34,6 @@ module.exports = grammar({
   extras: $ => [
     /\s/,
     $.comment
-  ],
-
-  conflicts: $ => [
-    [$.member_expression, $._expression],
   ],
 
   rules: {
@@ -386,7 +382,7 @@ module.exports = grammar({
       ))
     ),
 
-    member_expression: $ => prec.dynamic(1, seq(
+    member_expression: $ => prec.left(PREC.MEMBER, seq(
       field('object', choice(
           $._expression,
           $.identifier,
@@ -395,12 +391,12 @@ module.exports = grammar({
       field('property', alias($.identifier, $.property_identifier))
     )),
 
-    array_access_expression: $ => seq(
+    array_access_expression: $ => prec.left(PREC.MEMBER, seq(
       field('base', $._expression),
       '[',
       optional(field('index', $._expression)),
       ']'
-    ),
+    )),
 
     parenthesized_expression: $ => prec(2, seq('(', $._expression, ')')),
 
