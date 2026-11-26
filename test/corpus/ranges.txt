@@ -1,0 +1,38 @@
+==================
+Tokens do not include preceding whitespace
+:cst
+==================
+
+pragma circom 2.0.0;
+template Multiplier() {}
+template parallel P() {}
+
+---
+
+1:0  - 4:0    source_file
+1:0  - 1:20     pragma_directive
+1:0  - 1:6        "pragma"
+1:7  - 1:19       circom_pragma_token
+1:7  - 1:13         "circom"
+1:14 - 1:19         version: circom_version `2.0.0`
+1:19 - 1:20       ";"
+2:0  - 2:24     template_definition
+2:0  - 2:8        "template"
+2:9  - 2:19       name: identifier `Multiplier`
+2:19 - 2:21       parameter_list
+2:19 - 2:20         "("
+2:20 - 2:21         ")"
+2:22 - 2:24       body: template_body
+2:22 - 2:23         "{"
+2:23 - 2:24         "}"
+3:0  - 3:24     template_definition
+3:0  - 3:8        "template"
+3:9  - 3:17       type: template_type
+3:9  - 3:17         parallel `parallel`
+3:18 - 3:19       name: identifier `P`
+3:19 - 3:21       parameter_list
+3:19 - 3:20         "("
+3:20 - 3:21         ")"
+3:22 - 3:24       body: template_body
+3:22 - 3:23         "{"
+3:23 - 3:24         "}"

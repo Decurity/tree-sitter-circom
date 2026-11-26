@@ -70,7 +70,7 @@ module.exports = grammar({
 
     _circom: $ => prec(1, 'circom'),
 
-    circom_version: $ => /'?\.? ?(\d|\*)+(\. ?(\d|\*)+ ?(\.(\d|\*)+)?)?'?/,
+    circom_version: $ => /'?\.?(\d|\*)+(\. ?(\d|\*)+ ?(\.(\d|\*)+)?)?'?/,
 
     // Include
     include_directive: $ => seq(
